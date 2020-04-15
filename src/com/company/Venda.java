@@ -26,16 +26,17 @@ public class Venda {
         return carro;
     }
 
-    public List buscar(String busca){
+    public List buscar(Carro carro){
         List<Carro> listaFiltradaDeCarros = new ArrayList<Carro>();
 
         for(int i = 0; i < this.listaDeCarros.size(); i += 1){
-            if(this.listaDeCarros.get(i).getMarca().equals(busca) || this.listaDeCarros.get(i).getModelo().equals(busca) ||
-            this.listaDeCarros.get(i).getCor().equals(busca)){
-                listaFiltradaDeCarros.add(this.listaDeCarros.get(i));
+                 if(this.listaDeCarros.get(i).getMarca().equals(carro.getMarca()) ||
+                    this.listaDeCarros.get(i).getModelo().equals(carro.getModelo()) ||
+                    this.listaDeCarros.get(i).getCor().equals(carro.getCor()) ||
+                    this.listaDeCarros.get(i).getAno() == carro.getAno()) {
+                        listaFiltradaDeCarros.add(this.listaDeCarros.get(i));
+                }
             }
-        }
-
         return listaFiltradaDeCarros;
     }
 

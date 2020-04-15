@@ -14,7 +14,7 @@ public class Main {
                 0,
                 "Mustang",
                 "Vermelho",
-                2015,
+                2020,
                 "Ford",
                 150
         );
@@ -42,13 +42,24 @@ public class Main {
                 "Não",
                 6,
                 "Sim",
-                12,
+                10,
                 0,
                 "Ka",
-                "Preto",
-                2010,
+                "Vermelho",
+                2015,
                 "Ford",
-                2345
+                150
+        );
+
+        Carro ferramentaDePesquisaDeCarros = new Carro(
+               null,
+               null,
+               "Mustang",
+               "Ford",
+               "Vermelho",
+               0,
+               0,
+                2
         );
 
         Venda listaDeVendas = new Venda();
@@ -57,8 +68,9 @@ public class Main {
         listaDeVendas.adicionarCarroALista(segundoCarro);
         listaDeVendas.adicionarCarroALista(terceiroCarro);
 
-        System.out.println("Lista dos carros a venda: " + listaDeVendas);
 
-        System.out.println("Lista de pesquisada avançada: " + listaDeVendas.buscar("Ford"));
-    }
+        System.out.println("Lista dos carros a venda: " + listaDeVendas + "\n\n");
+
+        System.out.println("Filtro de pesquisa: " + listaDeVendas.buscar(ferramentaDePesquisaDeCarros));
+        }
 }

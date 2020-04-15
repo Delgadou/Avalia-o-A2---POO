@@ -41,6 +41,20 @@ public class Carro extends Marca{
                         this.marchaAtual = marchaAtual;
                 }
 
+    public Carro(String tetoSolar,
+                 String cambioAutomatico,
+                 String modelo,
+                 String marca,
+                 String cor,
+                 int ano,
+                 int chassi,
+                 int numeroDePortasDoCarro){
+                        super(modelo, cor, ano, marca, chassi);
+                        this.numeroDePortasDoCarro = numeroDePortasDoCarro;
+                        this.tetoSolar = tetoSolar;
+                        this.cambioAutomatico = cambioAutomatico;
+    };
+
     public Proprietário getProprietario() {
         return proprietario;
     }
@@ -125,6 +139,7 @@ public class Carro extends Marca{
         this.autonomiaDeViagem = autonomiaDeViagem;
     }
 
+
     public void acelerar(){
         this.velocidadeAtual++;
     }
@@ -154,7 +169,6 @@ public class Carro extends Marca{
         }
     }
 
-
     public void getAutonomiaDeViagem(){
         System.out.println("A autonomia de viagem é de " + this.autonomiaDeViagem + "KM");
     }
@@ -163,6 +177,9 @@ public class Carro extends Marca{
         this.autonomiaDeViagem = kmPercorridosPorLitro * volumeDeCombustivel;
     }
 
+    public String conferirVelocidadeAtual() {
+        return "A velocidade atual do carro é " + velocidadeAtual + "km/h";
+    }
 
     @Override
     public String toString() {
@@ -182,8 +199,4 @@ public class Carro extends Marca{
                 "Marcha atual: " + this.marchaAtual + "\n" +
                 "Marcha re: " + this.marchaRe + "\n";
     }
-
-
-    public String conferirVelocidadeAtual() {
-        return "A velocidade atual do carro é " + velocidadeAtual + "km/h";
-    }}
+}
